@@ -14,8 +14,8 @@ systemd (http://www.freedesktop.org/software/systemd/) 204.
 Credits and Legal Information
 =============================
 
-All code in logout is free released under the terms of the LGPLv2.1+ license,
-except sd-daemon.c and sd-daemon, which are MIT-licensed. For a list of its
-authors and contributors, see AUTHORS.
+All code in logout is free software released under the terms of the LGPLv2.1+
+license, except sd-daemon.c and sd-daemon, which are MIT-licensed. For a list of
+its authors and contributors, see AUTHORS.
 
 The ASCII art logo at the top was made using FIGlet (http://www.figlet.org/).
