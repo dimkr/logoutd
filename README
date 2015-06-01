@@ -1,0 +1,21 @@
+ _                         _      _
+| | ___   __ _  ___  _   _| |_ __| |
+| |/ _ \ / _` |/ _ \| | | | __/ _` |
+| | (_) | (_| | (_) | |_| | || (_| |
+|_|\___/ \__, |\___/ \__,_|\__\__,_|
+         |___/
+
+Overview
+========
+
+logoutd is a small, standalone, incredibly experimental fork of logind from
+systemd (http://www.freedesktop.org/software/systemd/) 204.
+
+Credits and Legal Information
+=============================
+
+All code in logout is free released under the terms of the LGPLv2.1+ license,
+except sd-daemon.c and sd-daemon, which are MIT-licensed. For a list of its
+authors and contributors, see AUTHORS.
+
+The ASCII art logo at the top was made using FIGlet (http://www.figlet.org/).
