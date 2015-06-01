@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # This file is part of logoutd.
 #
 # Copyright 2015 Dima Krasner
@@ -14,8 +16,6 @@
 #
 # You should have received a copy of the GNU Lesser General Public License along
 # with logoutd; If not, see <http://www.gnu.org/licenses/>.
-
-#!/bin/sh
 
 FILES="systemd-204/src/login/logind.c systemd-204/src/login/logind-gperf.gperf systemd-204/src/login/logind-acl.c systemd-204/src/login/logind-action.c systemd-204/src/login/logind-button.c systemd-204/src/login/logind-dbus.c systemd-204/src/login/logind-device.c systemd-204/src/login/logind-inhibit.c systemd-204/src/login/logind-seat.c systemd-204/src/login/logind-seat-dbus.c systemd-204/src/login/logind-session.c systemd-204/src/login/logind-session-dbus.c systemd-204/src/login/logind-user.c systemd-204/src/login/logind-user-dbus.c sd-login.c sysfs-show.c systemd-204/src/libsystemd-daemon/sd-daemon.c systemd-204/src/shared/strv.c systemd-204/src/shared/label.c systemd-204/src/shared/set.c systemd-204/src/shared/unit-name.c systemd-204/src/shared/sleep-config.c systemd-204/src/shared/log.c systemd-204/src/shared/mkdir.c systemd-204/src/shared/fileio.c systemd-204/src/shared/path-util.c systemd-204/src/shared/time-util.c systemd-204/src/shared/cgroup-util.c systemd-204/src/shared/hashmap.c systemd-204/src/shared/dbus-common.c systemd-204/src/shared/util.c systemd-204/src/shared/env-util.c systemd-204/src/shared/exit-status.c systemd-204/src/shared/utf8.c systemd-204/src/shared/polkit.c systemd-204/src/shared/acl-util.c systemd-204/src/shared/conf-parser.c systemd-204/src/shared/dbus-loop.c systemd-204/src/shared/cgroup-label.c systemd-204/src/shared/audit.c systemd-204/src/shared/virt.c systemd-204/src/shared/capability.c systemd-204/src/shared/fileio-label.c systemd-204/src/shared/macro.h systemd-204/src/systemd/sd-id128.h systemd-204/src/shared/ioprio.h systemd-204/src/shared/missing.h systemd-204/src/shared/def.h systemd-204/src/systemd/sd-messages.h systemd-204/src/systemd/sd-sdaemon.h systemd-204/src/shared/list.h systemd-204/src/core/special.h systemd-204/src/shared/socket-util.h systemd-204/src/systemd/sd-daemon.h systemd-204/LICENSE.LGPL2.1 systemd-204/LICENSE.MIT"
 
