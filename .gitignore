@@ -1,3 +1,4 @@
 logoutd
 *.o
 logind-gperf.c
+org.freedesktop.login1.service

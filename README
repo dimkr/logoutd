@@ -11,6 +11,9 @@ Overview
 logoutd is a small, standalone, incredibly experimental fork of logind from
 systemd (http://www.freedesktop.org/software/systemd/) 204.
 
+logoutd-launch is based on systemd-logind-launch from the Debian
+(http://www.debian.org/) systemd package.
+
 The entire forking process is documented in fork_logind.sh.
 
 Credits and Legal Information

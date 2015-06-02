@@ -7,7 +7,8 @@ PREFIX ?= /usr
 BIN_DIR ?= $(PREFIX)/bin
 SBIN_DIR ?= $(PREFIX)/sbin
 MAN_DIR ?= $(PREFIX)/man
-DOC_DIR ?= $(PREFIX)/doc
+DATA_DIR ?= $(PREFIX)/share
+DOC_DIR ?= $(DATA_DIR)/doc
 CONF_DIR ?= /etc
 
 PACKAGE = logoutd
@@ -36,9 +37,8 @@ LDFLAGS += $(shell pkg-config --libs libudev dbus-1) \
 
 SRCS = $(wildcard *.c) logind-gperf.c
 OBJECTS = $(SRCS:.c=.o)
-DAEMON = $(PACKAGE)
 
-all: $(DAEMON)
+all: logoutd org.freedesktop.login1.service
 
 logind-gperf.c: logind-gperf.gperf
 	gperf < $< > $@
@@ -46,14 +46,20 @@ logind-gperf.c: logind-gperf.gperf
 %.o: %.c
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-$(DAEMON): $(OBJECTS)
+logoutd: $(OBJECTS)
 	$(CC) -o $@ $^ $(LDFLAGS)
 
-clean:
-	rm -f $(DAEMON) $(OBJECTS) logind-gperf.c
+org.freedesktop.login1.service: org.freedesktop.login1.service.in
+	sed s~@SBIN_DIR@~$(SBIN_DIR)~ $< > $@
 
-install: $(DAEMON)
-	install -D -m 755 $(DAEMON) $(DESTDIR)$(SBIN_DIR)/$(DAEMON)
+clean:
+	rm -f logoutd $(OBJECTS) logind-gperf.c
+
+install: all
+	install -D -m 755 logoutd $(DESTDIR)$(SBIN_DIR)/logoutd
+	install -D -m 755 logoutd-launch $(DESTDIR)$(SBIN_DIR)/logoutd-launch
+	install -D -m 644 org.freedesktop.login1.service $(DESTDIR)$(DATA_DIR)/dbus-1/system-services/org.freedesktop.login1.service
+	install -D -m 644 org.freedesktop.login1.policy $(DESTDIR)$(DATA_DIR)/polkit-1/actions/org.freedesktop.login1.policy
 	install -D -m 644 README $(DESTDIR)$(DOC_DIR)/$(PACKAGE)/README
 	install -m 644 AUTHORS $(DESTDIR)$(DOC_DIR)/$(PACKAGE)/AUTHORS
 	install -m 644 LICENSE.LGPL2.1 $(DESTDIR)$(DOC_DIR)/$(PACKAGE)/LICENSE.LGPL2.1
