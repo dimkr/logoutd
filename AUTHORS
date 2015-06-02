@@ -1,7 +1,13 @@
-Lennart Poettering
-Kay Sievers
-many others
-Tollef Fog Heen
-Michael Biebl
-Michael Stapelberg
-Dima Krasner
+logoutd-launch, debian/*:
+	Tollef Fog Heen
+	Michael Biebl
+	Michael Stapelberg
+	Dima Krasner
+
+Makefile, fork_logind.sh:
+	Dima Krasner
+
+*:
+	Lennart Poettering
+	Kay Sievers
+	many others

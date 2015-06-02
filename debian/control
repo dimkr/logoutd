@@ -1,0 +1,36 @@
+Source: logoutd
+Section: admin
+Priority: optional
+Maintainer: Dima Krasner <dima@dimakrasner.com>
+Uploaders: Dima Krasner <dima@dimakrasner.com>
+Standards-Version: 3.9.5
+Vcs-Git: git://github.com/dimkr/logoutd.git
+Vcs-Browser: https://github.com/dimkr/logoutd
+X-Python-Version: >= 2.7
+XS-Testsuite: autopkgtest
+Homepage: https://github.com/dimkr/logoutd
+Build-Depends: debhelper (>= 9),
+               pkg-config,
+               gperf,
+               libcap-dev,
+               libpam0g-dev,
+               libdbus-1-dev (>= 1.3.2),
+               libacl1-dev,
+               libattr1-dev
+
+Package: logoutd
+Architecture: linux-any
+Section: admin
+Priority: optional
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         udev,
+         acl,
+         adduser,
+         libcap2-bin
+Breaks: lvm2 (<< 2.02.84-1),
+        lsb-base (<< 4.1+Debian4)
+Conflicts: klogd, systemd
+Description: session and seat management daemon
+ logoutd is a standalone replacement for logind.
