@@ -17,7 +17,7 @@ CFLAGS += -std=gnu99 \
           -Wall \
           -pedantic \
           -D_GNU_SOURCE \
-          -I. \
+          -DDISABLE_SYSTEMD \
           -DPACKAGE_STRING=\"$(PACKAGE)\" \
           -D_GNU_SOURCE \
           -DX_SERVER=\"$(BIN_DIR)/X\" \
@@ -27,6 +27,7 @@ CFLAGS += -std=gnu99 \
           -DHAVE_SECURE_GETENV \
           -DSYSTEMD_STDIO_BRIDGE_BINARY_PATH=\"$(BIN_DIR)/systemd-stdio-bridge\" \
           -DPKGSYSCONFDIR=\"$(CONF_DIR)\" \
+          -I. \
           $(shell pkg-config --cflags libudev dbus-1)
 LDFLAGS += $(shell pkg-config --libs libudev dbus-1) \
            -lpam \
